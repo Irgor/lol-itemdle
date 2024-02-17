@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@for $i from 1 through 61 {
+    @keyframes move#{$i} {
+
+        $startx: (random(3) * 1vw);
+        $starty: (random(3) * 1vh);
+        $startz: (random(3) * 1px);
+        $startr: random(90);
+
+        $midPoint: (random($limit: 40) + 20) + '%';
+        
+        0% {
+            transform: translate3d($startx, $starty, $startz) rotate($startr + deg);
+        }
+        
+        #{$midPoint} {
+            transform: translate3d((random(3) * 1vw), (random(3) * 1vh), (random(3) * 1px)) rotate(random(180) + deg);
+        }
+        
+        100% {
+            transform: translate3d($startx, $starty, $startz) rotate($startr + deg);
+        }
+    }
+
+    .animate#{$i} {
+        animation-name: move#{$i};
+    }
+}

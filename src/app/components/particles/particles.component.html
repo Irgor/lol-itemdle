@@ -1,0 +1,5 @@
+<div class="particles-container">
+    <div class="particle" *ngFor="let particle of particles" [style.left]="particle.left" [style.top]="particle.top"
+        [style.height]="particle.size" [style.width]="particle.size" [class]="particle.move">
+    </div>
+</div>

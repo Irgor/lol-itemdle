@@ -1,0 +1,20 @@
+.particles-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 2;
+    overflow: hidden;
+
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(245, 245, 220, 0.2);
+        mix-blend-mode: lighten;
+        animation-iteration-count: infinite;
+        animation-duration: 12s;
+        animation-timing-function: linear;
+    }
+}
+

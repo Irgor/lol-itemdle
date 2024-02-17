@@ -1,0 +1,20 @@
+<div class="game-container">
+    <particles></particles>
+
+    <svg id="lines-holder" width="5000" height="5000"></svg>
+
+    <div class="game">
+        <img class="item start item-animate1" [id]="startItem?.code + '0'" [ngClass]="{'inactive': layers.length != 0}"
+            (click)="getRelatives(startItem)" [src]="getItemImage(startItem)" [alt]="startItem?.name">
+
+        <div *ngFor="let layer of layers" [id]="'layer' + layer" class="options"
+            [ngClass]="{'inactive': !isCurrentLayer(layer)}">
+
+            <img class="item item-animate3" [id]="relative.code + layer" (click)="getRelatives(relative, true)"
+                *ngFor="let relative of getItemsFromRelatives(layer - 1)" [src]="getItemImage(relative)"
+                [alt]="relative?.name">
+        </div>
+
+        <img class="item target item-animate2" [src]="getItemImage(finalItem)" [alt]="finalItem?.name">
+    </div>
+</div>
